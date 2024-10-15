@@ -1,0 +1,135 @@
+<html><head><base href="https://unitv.com/planos/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniTV - Planos e Preços</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .banner {
+    width: 800px;
+    height: 600px;
+    background-color: #e50914;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+  }
+  .content {
+    padding: 40px;
+    color: white;
+    text-align: center;
+  }
+  h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+  .plans {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  .plan {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 22%;
+  }
+  .plan h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .price {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .duration {
+    font-style: italic;
+    font-size: 14px;
+  }
+  .contact {
+    font-size: 24px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  .contact:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+  }
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="logo">UniTV</div>
+    <div class="content">
+      <h1>Planos UniTV</h1>
+      <div class="plans">
+        <div class="plan">
+          <h2>Mensal</h2>
+          <p class="price">R$ 25,00</p>
+          <p class="duration">30 dias</p>
+        </div>
+        <div class="plan">
+          <h2>Trimestral</h2>
+          <p class="price">R$ 70,00</p>
+          <p class="duration">90 dias</p>
+        </div>
+        <div class="plan">
+          <h2>Semestral</h2>
+          <p class="price">R$ 120,00</p>
+          <p class="duration">180 dias</p>
+        </div>
+        <div class="plan">
+          <h2>Anual</h2>
+          <p class="price">R$ 170,00</p>
+          <p class="duration">365 dias</p>
+        </div>
+      </div>
+      <a href="https://wa.me/5541997822592" class="contact">Contate-nos via WhatsApp</a>
+    </div>
+  </div>
+
+  <script>
+    // This script creates an SVG element to add some visual interest to the banner
+    const banner = document.querySelector('.banner');
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', '100%');
+    svg.style.position = 'absolute';
+    svg.style.top = '0';
+    svg.style.left = '0';
+    svg.style.zIndex = '-1';
+
+    for (let i = 0; i < 50; i++) {
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      circle.setAttribute('cx', Math.random() * 800);
+      circle.setAttribute('cy', Math.random() * 600);
+      circle.setAttribute('r', Math.random() * 5 + 2);
+      circle.setAttribute('fill', 'rgba(255,255,255,0.2)');
+      svg.appendChild(circle);
+    }
+
+    banner.appendChild(svg);
+  </script>
+</body>
+</html>
